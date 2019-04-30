@@ -1,0 +1,25 @@
+django命令详解
+
+django-admin.py startproject myweb .  #创建项目
+python manage.py startapp myapp   #创建 app
+python manage.py runserver   #启动 Django 中的开发服务器
+python manage.py -h   #帮助文档
+python manage.py <command> [options] #Django 命令
+Django 数据库操作	
+	项目文件夹下，新建一个与项目相匹配的数据库：python manage.py migrate
+	数据库改动：
+		1：修改models.py；
+		2：对learning_logs（项目目录）调用makemigrations；修改我们定翼的数据库，生成迁移文件
+		python manage.py makemigrations learning_logs
+		3：让Django迁移项目。python manage.py migrate  利用迁移文件，生成数据库表，迁移项目
+		
+创建超级用户：python manage.py createsuperuser
+
+--------------------- 
+vitualenv虚拟环境的使用
+virtualenv安装 pip install --user virtualenv
+virtualenv建立：在指定文件夹下python -m venv ll_env
+虚拟环境进入：
+	Windows进入虚拟环境之中命令：ll_env\Scripts\activate
+	Linux环境中进入虚拟:source ll_env/bin/activate
+虚拟环境停止：deactivate
